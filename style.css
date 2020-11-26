@@ -17,7 +17,7 @@ a {
     flex-direction: column;
 }
 
-#cover-image {
+.cover-image {
     height: 38vh;
     object-fit: cover;
     object-position: top;
@@ -41,7 +41,7 @@ nav {
 }
 
 nav a {
-    margin-right: 3.4em;
+    margin-right: 5.4em;
     color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -53,15 +53,34 @@ nav a {
     margin-bottom: .3em;
 }
 
+#cover-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.cover-image {
+    width: 100%;
+}
+
+#cookies {
+    display: none;
+    width: 100%;
+}
+
 .intro-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 160px auto;
-    border: 1px solid black;
+    margin: 0 auto 3em auto;
     width: 70%;
     padding: 2.5em 2em;
     text-align: center;
+    background-color: #e7e6e4;
+}
+
+#logo {
+    max-width: 20%;
+    margin: 0 auto;
 }
 
 .catch-frase {
@@ -75,6 +94,27 @@ nav a {
     color:black;
     font-size: 1.2rem;
     font-weight: 500;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#cta:hover, #cta:focus {
+    font-size: 1.22rem;
+    background-color: #e99908;
+}
+
+footer {
+    display: flex;
+    margin-top: auto; 
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    justify-content: space-evenly;
+    line-height: 1.6;
+}
+
+.footer-columns {
+    width: 14%;
+    text-align: center;
 }
 
 
@@ -82,16 +122,28 @@ nav a {
     .container {
         flex-direction: row;
     }
-    #cover-image {
+    .cover-image {
         height: 100vh;
-        width: 38%;
+        width: 100%;
+        mix-blend-mode: multiply;
+    }
+    .cookies {
+         height: 100vh; 
+        width: 100%; 
+        object-fit: cover;
+        object-position: top; 
+        mix-blend-mode: multiply;
     }
     #cookies {
         height: 100vh;
-        width: 38%;
-        object-fit: cover;
-        object-position: top; 
-        display: none;
+        width: 47%;
+    }
+    #cover-image {
+        height: 100vh;
+        width: 47%;
+    }
+    .img-container {
+        background-color: gray;
     }
     
 }
