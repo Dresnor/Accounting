@@ -1,6 +1,6 @@
 
 
-const coverImage = document.getElementById('cover-image');
+const coverImage = document.getElementById('cover-image-container');
 const arrow = document.getElementById('arrow');
 
 let interval = setInterval(() => {
@@ -43,8 +43,7 @@ function imageListener() {
         expandImage();
         dropElements();
         setTimeout(() => {
-            arrow.style.opacity = "0";
-            setTimeout(() => arrow.style.display = "none", 1100)
+            arrow.style.visibility = "hidden";
         }, 1000)
     })
     coverImage.addEventListener('click', imageListener);

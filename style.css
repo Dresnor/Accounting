@@ -10,12 +10,16 @@ html, body {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;;
 }
 
 a {
     text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
 }
 
 .container {
@@ -28,7 +32,6 @@ a {
     object-fit: cover;
     object-position: top;
     width: 100%;
-    object-fit: cover;
 }
 
 .content {
@@ -59,14 +62,14 @@ nav a {
 #main-heading {
     letter-spacing: 2px;
     font-size: 2.7rem;
-    margin-bottom: .3em;
+    margin: .3em 0;
 }
 
 .intro-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto 3em auto;
+    margin: 0 auto .2em auto;
     width: 70%;
     padding: 2.5em 2em;
     text-align: center;
@@ -176,7 +179,8 @@ footer {
         flex-direction: row;
     }
     .cover-image {
-        height: 100vh;
+        height: 100%;
+        min-height: 100vh;
         width: 100%;
         mix-blend-mode: multiply;
         cursor: pointer;
@@ -196,47 +200,21 @@ footer {
     .flash {
         color: #e99908;
     }
-    /* .drop-1-start {
-        top: -50px;
-        left: 5%;
-        transition: 1s ease-out;
-        transition-delay: .2s;
+    .image-bottom {
+        width: 46%;
     }
-    .drop-2-start {
-        top: -50px;
-        left: 5%;
-        transition: 1s ease-out;
-        transition-delay: .6s;
+    .image-bottom-container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        width: 26%;
     }
-    .drop-3-start {
-        top: -50px;
-        left: 5%;
-        transition: 1s ease-out;
-        transition-delay: 1s;
-    }    
-    .drop-1-end {
-        top: 12%;
-        left: 5%;
+    .operater-text {
+        font-style: italic;
+        font-size: 1.2em;
+        width: 100%;
+        align-self: center;
     }
-    .drop-2-end {
-        top: 18%;
-        left: 5%;
-    }
-    .drop-3-end {
-        top: 24%;
-        left: 5%;
-    }
-    .drop-1-start, .drop-2-start, .drop-3-start {
-        position: absolute;
-        color: white;
-        font-size: 1.3rem;
-    }
-    .drop-1-end, .drop-2-end, .drop-3-end {
-        position: absolute;
-        color: white;
-        font-size: 1.3rem;
-    } */
-
 }
 
 @media(max-width: 970px) {
