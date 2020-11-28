@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
-body {
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+body {
     height: 100vh;
     font-family: 'Josefin Sans', sans-serif;;
 }
@@ -33,11 +39,11 @@ nav {
     display: flex;
     font-size: 1rem;
     justify-content: flex-end;
-    padding-top: 1.4em;
-    padding-bottom: 1.4em;
+    padding: 1.2em;
     width: 100%;
     background-color: rgba(0,0,0,0.8);
     margin: 0;
+    align-items: center;
 }
 
 nav a {
@@ -48,8 +54,8 @@ nav a {
 }
 
 #main-heading {
-    letter-spacing: 3px;
-    font-size: 2.9rem;
+    letter-spacing: 2px;
+    font-size: 2.7rem;
     margin-bottom: .3em;
 }
 
@@ -75,7 +81,7 @@ nav a {
     width: 70%;
     padding: 2.5em 2em;
     text-align: center;
-    background-color: #e7e6e4;
+    background-color: #f1f1f1;
 }
 
 #logo {
@@ -95,11 +101,11 @@ nav a {
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
-    transition: .4s;
+    transition: .2s linear;
 }
 
 #cta:hover, #cta:focus {
-    font-size: 1.22rem;
+    transform: scale(1.03);
     background-color: #e99908;
 }
 
@@ -137,13 +143,65 @@ footer {
     #cookies {
         height: 100vh;
         width: 47%;
+        cursor: pointer;
     }
     #cover-image {
         height: 100vh;
-        width: 47%;
+        width: 45%;
+        cursor: pointer;
+        transition: all 1.3s ease-in-out;
+        position: relative;
     }
     .img-container {
         background-color: gray;
     }
-    
+    .drop-1-start {
+        top: -50px;
+        left: 5%;
+        transition: 1s ease-out;
+        transition-delay: .2s;
+    }
+    .drop-2-start {
+        top: -50px;
+        left: 5%;
+        transition: 1s ease-out;
+        transition-delay: .6s;
+    }
+    .drop-3-start {
+        top: -50px;
+        left: 5%;
+        transition: 1s ease-out;
+        transition-delay: 1s;
+    }    
+    .drop-1-end {
+        top: 12%;
+        left: 5%;
+    }
+    .drop-2-end {
+        top: 18%;
+        left: 5%;
+    }
+    .drop-3-end {
+        top: 24%;
+        left: 5%;
+    }
+    .drop-1-start, .drop-2-start, .drop-3-start {
+        position: absolute;
+        color: white;
+        font-size: 1.3rem;
+    }
+    .drop-1-end, .drop-2-end, .drop-3-end {
+        position: absolute;
+        color: white;
+        font-size: 1.3rem;
+    }
+    .arrow {
+        color: white;
+        font-size: 26px;
+        margin-right: auto;
+        transition: all 1s ease-in-out;
+    }
+    .flash {
+        color: #e99908;
+    }
 }
