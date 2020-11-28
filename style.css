@@ -27,12 +27,15 @@ a {
     height: 38vh;
     object-fit: cover;
     object-position: top;
+    width: 100%;
+    object-fit: cover;
 }
 
 .content {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 nav {
@@ -59,20 +62,6 @@ nav a {
     margin-bottom: .3em;
 }
 
-#cover-image {
-    width: 100%;
-    object-fit: cover;
-}
-
-.cover-image {
-    width: 100%;
-}
-
-#cookies {
-    display: none;
-    width: 100%;
-}
-
 .intro-wrapper {
     display: flex;
     flex-direction: column;
@@ -84,9 +73,27 @@ nav a {
     background-color: #f1f1f1;
 }
 
-#logo {
+.logo {
+    max-width: 20%;
+    align-self: flex-end;
+    position: relative;
+    margin: 0 auto;
+    animation: logoIn 1.1s ease-out;
+} 
+
+.logo-end {
     max-width: 20%;
     margin: 0 auto;
+}
+
+@keyframes logoIn {
+    from {
+       right: -80%; 
+    }
+    to {
+        right: 0;
+        margin: 0 auto;
+    }
 }
 
 .catch-frase {
@@ -123,8 +130,48 @@ footer {
     text-align: center;
 }
 
+.drop-1-start {
+    top: -100px;
+    left: 5%;
+    transition: 1s ease-out;
+    transition-delay: .2s;
+}
+.drop-2-start {
+    top: -100px;
+    left: 5%;
+    transition: 1s ease-out;
+    transition-delay: .6s;
+}
+.drop-3-start {
+    top: -100px;
+    left: 5%;
+    transition: 1s ease-out;
+    transition-delay: 1s;
+}    
+.drop-1-end {
+    top: 12%;
+    left: 5%;
+}
+.drop-2-end {
+    top: 18%;
+    left: 5%;
+}
+.drop-3-end {
+    top: 24%;
+    left: 5%;
+}
+.drop-1-start, .drop-2-start, .drop-3-start {
+    position: absolute;
+    color: white;
+    font-size: 1.3rem;
+}
+.drop-1-end, .drop-2-end, .drop-3-end {
+    position: absolute;
+    color: white;
+    font-size: 1.3rem;
+}
 
-@media(min-width: 680px) {
+@media(min-width: 770px) {
     .container {
         flex-direction: row;
     }
@@ -132,30 +179,24 @@ footer {
         height: 100vh;
         width: 100%;
         mix-blend-mode: multiply;
-    }
-    .cookies {
-         height: 100vh; 
-        width: 100%; 
-        object-fit: cover;
-        object-position: top; 
-        mix-blend-mode: multiply;
-    }
-    #cookies {
-        height: 100vh;
-        width: 47%;
         cursor: pointer;
-    }
-    #cover-image {
-        height: 100vh;
-        width: 45%;
-        cursor: pointer;
-        transition: all 1.3s ease-in-out;
         position: relative;
     }
     .img-container {
         background-color: gray;
+        width: 45%;
+        transition: all 1.3s ease-in-out;
     }
-    .drop-1-start {
+    .arrow {
+        color: white;
+        font-size: 26px;
+        margin-right: auto;
+        transition: all 1s ease-in-out;
+    }
+    .flash {
+        color: #e99908;
+    }
+    /* .drop-1-start {
         top: -50px;
         left: 5%;
         transition: 1s ease-out;
@@ -194,14 +235,15 @@ footer {
         position: absolute;
         color: white;
         font-size: 1.3rem;
+    } */
+
+}
+
+@media(max-width: 970px) {
+    nav {
+        justify-content: center;
     }
-    .arrow {
-        color: white;
-        font-size: 26px;
-        margin-right: auto;
-        transition: all 1s ease-in-out;
-    }
-    .flash {
-        color: #e99908;
+    nav a {
+        margin: 0 7%;
     }
 }

@@ -1,18 +1,6 @@
 
 
-const cookies = document.getElementById('cookies');
 const coverImage = document.getElementById('cover-image');
-
-// cookies.addEventListener('click', () =>
-//     {cookies.style.display = "none"
-//     coverImage.style.display = "block"
-// })
-
-// coverImage.addEventListener('click', () => {
-//     coverImage.style.display = "none"
-//     cookies.style.display = "block"
-// })
-
 const arrow = document.getElementById('arrow');
 
 let interval = setInterval(() => {
@@ -37,14 +25,57 @@ function dropElements() {
     drop3.classList.add('drop-3-end')
 }
 
-arrow.addEventListener('mouseenter', () => {
-    clearInterval(interval)
+function imageListener() {
     expandImage();
     dropElements();
 }
-)
 
-coverImage.addEventListener('click', () => {
-    expandImage();
-    dropElements();
- })
+ const logo = document.getElementById('logo');
+
+ if (window.matchMedia("(max-width: 770px)").matches) {
+    arrow.style.display = 'none';
+     coverImage.removeEventListener('click', imageListener);
+  }
+
+  if (window.matchMedia("(min-width: 771px)").matches) {
+    arrow.addEventListener('mouseenter', () => {
+        clearInterval(interval)
+        expandImage();
+        dropElements();
+        setTimeout(() => {
+            arrow.style.opacity = "0";
+            setTimeout(() => arrow.style.display = "none", 1100)
+        }, 1000)
+    })
+    coverImage.addEventListener('click', imageListener);
+    arrow.style.display = "block";
+  }
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 770) {
+        coverImage.style.width = "45%"
+    }
+    if (window.innerWidth > 970) {
+        document.getElementById('drop-1').style.display = "block";
+        document.getElementById('drop-2').style.display = "block";
+        document.getElementById('drop-3').style.display = "block";
+        coverImage.addEventListener('click', imageListener);
+        arrow.style.display = "block";
+        arrow.addEventListener('mouseenter', () => {
+            clearInterval(interval)
+            expandImage();
+            dropElements();
+        })
+        
+}  else if (window.innerWidth <= 770) {
+        clearInterval(interval)
+        document.getElementById('drop-1').style.display = "none";
+        document.getElementById('drop-2').style.display = "none";
+        document.getElementById('drop-3').style.display = "none";
+        arrow.style.display = 'none';
+        coverImage.removeEventListener('click', imageListener);
+        coverImage.style.width = "100%"
+    }
+})
+
+
