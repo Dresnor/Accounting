@@ -32,7 +32,25 @@ img {
     object-fit: cover;
     object-position: top;
     width: 100%;
+    transition: all 3s;
 }
+
+.img-container {
+}
+
+.display-none {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.6s; 
+}
+
+@keyframes fade {
+    from {opacity: .3} 
+    to {opacity: 1}
+  }
 
 .content {
     width: 100%;
@@ -70,14 +88,14 @@ nav a {
     flex-direction: column;
     align-items: center;
     margin: 0 auto .2em auto;
-    width: 70%;
+    width: 90%;
     padding: 2.5em 2em;
     text-align: center;
     background-color: #f1f1f1;
 }
 
 .logo {
-    max-width: 20%;
+    max-width: 26%;
     align-self: flex-end;
     position: relative;
     margin: 0 auto;
@@ -126,6 +144,7 @@ footer {
     color: white;
     justify-content: space-evenly;
     line-height: 1.6;
+    font-size: .8rem;
 }
 
 .footer-columns {
@@ -174,6 +193,47 @@ footer {
     font-size: 1.3rem;
 }
 
+.image-bottom {
+    width: 100%;
+    object-fit: cover;
+    max-height: 7em;
+}
+
+.image-bottom-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 35%;
+}
+
+.operater-text {
+    font-style: italic;
+    font-size: .9em;
+    width: 100%;
+    align-self: center;
+    margin-left: .5em;
+    transition: .25s;
+}
+
+.image-bottom-container:hover {
+    cursor: pointer;
+}
+
+.operater-text:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#cta {
+    padding: .6em;
+}
+
+#main-heading {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
 @media(min-width: 770px) {
     .container {
         flex-direction: row;
@@ -191,6 +251,12 @@ footer {
         width: 45%;
         transition: all 1.3s ease-in-out;
     }
+    .logo {
+        max-width: 20%;
+    }
+.intro-wrapper {
+    width: 70%;
+}
     .arrow {
         color: white;
         font-size: 26px;
@@ -201,19 +267,25 @@ footer {
         color: #e99908;
     }
     .image-bottom {
-        width: 46%;
+        width: 100%;
+        object-fit: cover;
     }
     .image-bottom-container {
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        width: 26%;
+        width: 12%;
     }
     .operater-text {
         font-style: italic;
         font-size: 1.2em;
         width: 100%;
         align-self: center;
+        margin-left: .8em;
+        min-width: 150px;
+    }
+    footer {
+        font-size: 1rem;
     }
 }
 

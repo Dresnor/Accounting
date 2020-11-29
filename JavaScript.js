@@ -1,17 +1,19 @@
 
 
-const coverImage = document.getElementById('cover-image-container');
+const coverImageContainer = document.getElementById('cover-image-container');
+const coverImage = document.getElementById('cover-image')
 const arrow = document.getElementById('arrow');
+const mobileSliderImage = document.getElementById('mobile-slider-image');
 
 let interval = setInterval(() => {
     arrow.classList.toggle('flash');
 }, 1600)
 
 function expandImage() {
-    coverImage.style.width = "53%"
+    coverImageContainer.style.width = "53%"
     setTimeout(() => {
-        coverImage.style.transition = "3s"
-        coverImage.style.width = "45%"
+        coverImageContainer.style.transition = "3s"
+        coverImageContainer.style.width = "45%"
     },6000)
 }
 
@@ -34,7 +36,11 @@ function imageListener() {
 
  if (window.matchMedia("(max-width: 770px)").matches) {
     arrow.style.display = 'none';
-     coverImage.removeEventListener('click', imageListener);
+     coverImageContainer.removeEventListener('click', imageListener);
+     setInterval(() => {
+        coverImage.classList.toggle('display-none');
+        mobileSliderImage.classList.toggle('display-none')
+     }, 5000)
   }
 
   if (window.matchMedia("(min-width: 771px)").matches) {
@@ -46,19 +52,19 @@ function imageListener() {
             arrow.style.visibility = "hidden";
         }, 1000)
     })
-    coverImage.addEventListener('click', imageListener);
+    coverImageContainer.addEventListener('click', imageListener);
     arrow.style.display = "block";
   }
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 770) {
-        coverImage.style.width = "45%"
+        coverImageContainer.style.width = "45%"
     }
     if (window.innerWidth > 970) {
         document.getElementById('drop-1').style.display = "block";
         document.getElementById('drop-2').style.display = "block";
         document.getElementById('drop-3').style.display = "block";
-        coverImage.addEventListener('click', imageListener);
+        coverImageContainer.addEventListener('click', imageListener);
         arrow.style.display = "block";
         arrow.addEventListener('mouseenter', () => {
             clearInterval(interval)
@@ -72,8 +78,8 @@ window.addEventListener('resize', () => {
         document.getElementById('drop-2').style.display = "none";
         document.getElementById('drop-3').style.display = "none";
         arrow.style.display = 'none';
-        coverImage.removeEventListener('click', imageListener);
-        coverImage.style.width = "100%"
+        coverImageContainer.removeEventListener('click', imageListener);
+        coverImageContainer.style.width = "100%"
     }
 })
 
