@@ -32,10 +32,11 @@ img {
     object-fit: cover;
     object-position: top;
     width: 100%;
-    transition: all 3s;
+    transition: animation 3s;
 }
 
-.img-container {
+#mobile-slider-image {
+    object-position: center;
 }
 
 .display-none {
